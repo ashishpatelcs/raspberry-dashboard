@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'node_modules/ngx-toastr';
 
 @Component({
   selector: 'app-form-modal',
@@ -9,24 +10,20 @@ import { HttpClient } from '@angular/common/http';
 export class FormModalComponent implements OnInit {
   public name: string;
   public rfid: string;
-  public valid: number;
+  public valid: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   ngOnInit() {
   }
 
   onSubmit() {
     const body = {
-      'name': 'test',
-      'rfid': '123',
-      'valid': '1'
+      'name': this.name,
+      'rfid': this.rfid,
+      'valid': (this.valid === 'valid') ? '1' : '0'
     };
-    this.http.post('http://localhost:8888/raspberry-backend/newuser.php', {
-      'name': 'test',
-      'rfid': '123',
-      'valid': '1'
-    })
+    this.http.post('http://localhost:8888/raspberry-backend/newuser.php', body)
     .subscribe(
       data => {
         console.log(data);
@@ -35,6 +32,10 @@ export class FormModalComponent implements OnInit {
         console.log(error);
       }
     );
+    this.name = '';
+    this.rfid = '';
+    this.valid = '';
+    this.toastr.success(this.name + ' added to valid rfid card users list!');
   }
 
 }
