@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-modal',
@@ -8,11 +9,32 @@ import { Component, OnInit } from '@angular/core';
 export class FormModalComponent implements OnInit {
   public name: string;
   public rfid: string;
-  public valid: boolean;
+  public valid: number;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    const body = {
+      'name': 'test',
+      'rfid': '123',
+      'valid': '1'
+    };
+    this.http.post('http://localhost:8888/raspberry-backend/newuser.php', {
+      'name': 'test',
+      'rfid': '123',
+      'valid': '1'
+    })
+    .subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
