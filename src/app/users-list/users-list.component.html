@@ -1,1 +1,17 @@
-<h1>Users List:</h1>
+<h3>Users List</h3>
+<hr/>
+
+<div class="row">
+  <div *ngFor="let user of users | keyvalue" class="col-sm-6">
+      <a class='list-group-item clearfix' [routerLink]="[user, 'edit']">
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">{{ user.value.name }}</h4>
+            <p class="list-group-item-text">RFID Card ID: {{ user.value.id }}</p>
+          </div>
+          <div class="pull-right">
+            <span *ngIf="user.value.valid==1" class="btn btn-round btn-success">Active</span>
+            <span *ngIf="user.value.valid==0" class="btn btn-round btn-danger">Inactive</span>
+          </div>
+        </a>
+  </div>
+</div>
