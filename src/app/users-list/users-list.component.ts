@@ -13,7 +13,7 @@ export class UsersListComponent implements OnInit {
     this.http.get('http://localhost:8888/raspberry-backend/users-list.php')
       .subscribe(arg => {
         this.users = arg;
-        console.log(this.users[0]);
+        // console.log(this.users[0]);
       });
   }
 

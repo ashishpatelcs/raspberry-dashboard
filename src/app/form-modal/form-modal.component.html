@@ -8,11 +8,15 @@
       <input type="text" name="rfid" [(ngModel)]="rfid" class="form-control">
     </div>
     <div class="form-group">
-        <label>Permission: </label>
-        <select name ="valid" [(ngModel)]="valid" class="form-control">
+        <label>Permission: {{ permission }}</label>
+        <label class="switch">
+            <input type="checkbox" name="valid" [(ngModel)]="valid">
+            <span class="slider round"></span>
+          </label>
+        <!-- <select name ="valid" [(ngModel)]="valid" class="form-control">
           <option value="valid" selected="selected">Valid</option>
           <option value="invalid">Invalid</option>
-        </select>
+        </select> -->
       </div>
     <div class="form-group">
       <button (click)="onSubmit()" class="btn btn-primary">Add New User</button>
