@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'raspberry-dashboard';
+  currentYear = new Date().getFullYear();
 
   constructor() {}
 
