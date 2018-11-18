@@ -25,7 +25,10 @@ import { SettingsComponent } from './settings/settings.component';
   imports: [
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'new', component: FormModalComponent }
+      { path: 'new', component: FormModalComponent },
+      { path: 'users', component: UsersListComponent },
+      { path: 'reports', component: CardLogsComponent },
+      { path: 'settings', component: SettingsComponent }
     ]),
     BrowserModule,
     FormsModule,
