@@ -11,6 +11,7 @@ import { FormModalComponent } from './form-modal/form-modal.component';
 import { HomeComponent } from './home/home.component';
 import { CardLogsComponent } from './card-logs/card-logs.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     FormModalComponent,
     HomeComponent,
     CardLogsComponent,
-    UsersListComponent
+    UsersListComponent,
+    SettingsComponent
   ],
   imports: [
     RouterModule.forRoot([
