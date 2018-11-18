@@ -10,13 +10,15 @@ import { RouterModule } from '@angular/router';
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { HomeComponent } from './home/home.component';
 import { CardLogsComponent } from './card-logs/card-logs.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormModalComponent,
     HomeComponent,
-    CardLogsComponent
+    CardLogsComponent,
+    UsersListComponent
   ],
   imports: [
     RouterModule.forRoot([
