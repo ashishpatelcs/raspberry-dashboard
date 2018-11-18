@@ -9,12 +9,14 @@ import { ToastrModule } from '../../node_modules/ngx-toastr';
 import { RouterModule } from '@angular/router';
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { HomeComponent } from './home/home.component';
+import { CardLogsComponent } from './card-logs/card-logs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormModalComponent,
-    HomeComponent
+    HomeComponent,
+    CardLogsComponent
   ],
   imports: [
     RouterModule.forRoot([
